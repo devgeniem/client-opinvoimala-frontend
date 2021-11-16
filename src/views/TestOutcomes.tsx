@@ -12,6 +12,7 @@ import TestOutcome from '../components/tests/TestOutcome';
 import Annotation from '../components/Annotation';
 import Message from '../components/Message';
 import { TestOutcomes as TestOutcomesType } from '../store/models';
+import LinkList from '../components/LinkList';
 
 export const TestOutcomes = observer(() => {
   const history = useHistory();
@@ -66,7 +67,17 @@ export const TestOutcomes = observer(() => {
     return [...outcomes, ...(triggerOutcomes ?? [])];
   };
 
+  const getOutcomeLinkList = (outcome?: TestOutcomesType | null) => {
+    const { linkListTitle, linkList } = outcome ?? {};
+    if (!linkList?.length) return undefined;
+    return {
+      title: linkListTitle ?? null,
+      links: linkList,
+    };
+  };
+
   const visibleOutcomes = getVisibleOutcomes(outcome);
+  const linkList = getOutcomeLinkList(outcome);
 
   return (
     <Layout wrapperSize="sm" hero={hero} isLoading={isLoading}>
@@ -82,6 +93,8 @@ export const TestOutcomes = observer(() => {
       )}
 
       <Annotation text={t('annotation.test')} />
+
+      {linkList && <LinkList list={linkList} />}
     </Layout>
   );
 });
