@@ -7,13 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## Fixed
+## [0.4.4] - 2023-04-28
+
+### Fixed
 
 - Image component to add api url prefix to src
 
 ## [0.4.3] - 2023-03-18
 
-## Changed
+### Changed
 
 - Upgraded (most of the) packages
 - OPI-114: Changed giosg (chat) script to new version

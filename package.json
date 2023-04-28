@@ -1,6 +1,6 @@
 {
   "name": "client-opinvoimala-frontend",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "config": {
     "apiUrl": {
       "local": "http://localhost:1337",
