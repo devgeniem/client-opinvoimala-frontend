@@ -71,6 +71,13 @@ const InnerHtmlDiv: React.FC<Props> = observer(({ html }) => {
     __html = __html.replaceAll(embedContentRegex, placeholderElement);
   }
 
+  // Replace all img src attributes of form <img src="/uploads/..." /> with api url prefixed
+  const imgSrcRegex = /(<img[^>]*src=")(\/uploads[^"]*)"/gi;
+  __html = __html.replaceAll(
+    imgSrcRegex,
+    `$1${process.env.REACT_APP_API_URL}$2"`
+  );
+
   return <Container dangerouslySetInnerHTML={{ __html }}></Container>;
 });
 

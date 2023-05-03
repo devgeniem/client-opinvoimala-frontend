@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Image src attributes in wysiwyg content is prefixed with API url
+
 ## [0.4.4] - 2023-04-28
 
 ### Fixed
